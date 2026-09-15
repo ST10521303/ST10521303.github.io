@@ -1,0 +1,324 @@
+/* ===========================================================
+   Sihe Masinga — Professional Portfolio
+   Visual language: entity/relationship diagrams + database
+   schema tables, since the subject is a CS student whose two
+   showcased projects are literally a Java system and an ERD.
+   =========================================================== */
+
+:root{
+  --ink:#1D2B2E;
+  --paper:#F1EEE6;
+  --paper-raised:#E8E3D6;
+  --teal:#2F7A72;
+  --amber:#C08A3E;
+  --line:#8D8A7E;
+  --text-muted:#4A4E45;
+  --max-width:960px;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'IBM Plex Sans', sans-serif;
+  font-size:17px;
+  line-height:1.65;
+}
+::selection{background:var(--teal); color:var(--paper);}
+
+.mono{font-family:'IBM Plex Mono', monospace;}
+
+img{max-width:100%; display:block;}
+
+a{color:var(--teal);}
+a:hover, a:focus-visible{color:var(--amber);}
+
+.wrap{max-width:var(--max-width); margin:0 auto; padding:0 28px;}
+
+/* ---------- NAVIGATION ---------- */
+nav.site-nav{
+  background:var(--ink);
+  border-bottom:3px solid var(--teal);
+}
+nav.site-nav .wrap{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding-top:18px;
+  padding-bottom:18px;
+  flex-wrap:wrap;
+  gap:12px;
+}
+.nav-name{
+  font-family:'IBM Plex Serif', serif;
+  font-weight:600;
+  font-size:20px;
+  color:var(--paper);
+  text-decoration:none;
+}
+.nav-links{
+  display:flex;
+  gap:26px;
+  list-style:none;
+  margin:0;
+  padding:0;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:14px;
+}
+.nav-links a{
+  color:var(--paper);
+  text-decoration:none;
+  opacity:0.75;
+  padding-bottom:3px;
+  border-bottom:2px solid transparent;
+}
+.nav-links a:hover, .nav-links a:focus-visible{
+  opacity:1;
+  color:var(--paper);
+  border-bottom-color:var(--amber);
+}
+.nav-links a[aria-current="page"]{
+  opacity:1;
+  border-bottom-color:var(--teal);
+}
+
+/* ---------- PAGE HEADER (per-page hero) ---------- */
+.page-header{
+  padding:56px 0 44px;
+  border-bottom:1px solid var(--line);
+}
+.page-eyebrow{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:13px;
+  color:var(--teal);
+  margin-bottom:10px;
+}
+h1{
+  font-family:'IBM Plex Serif', serif;
+  font-weight:600;
+  font-size:clamp(32px, 5vw, 46px);
+  margin:0 0 14px 0;
+  line-height:1.1;
+}
+.page-header p.lede{
+  max-width:620px;
+  font-size:19px;
+  color:var(--text-muted);
+  margin:0;
+}
+
+section{padding:52px 0;}
+
+.section-head{
+  display:flex;
+  align-items:baseline;
+  gap:14px;
+  margin-bottom:30px;
+  border-bottom:1px solid var(--ink);
+  padding-bottom:12px;
+}
+.section-num{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:13px;
+  color:var(--amber);
+}
+h2{
+  font-family:'IBM Plex Serif', serif;
+  font-weight:600;
+  font-size:26px;
+  margin:0;
+}
+h3{
+  font-family:'IBM Plex Serif', serif;
+  font-weight:600;
+  font-size:20px;
+  margin:0 0 8px 0;
+}
+
+/* ---------- HOME: intro layout with photo slot ---------- */
+.intro-grid{
+  display:grid;
+  grid-template-columns:1fr 240px;
+  gap:44px;
+  align-items:start;
+}
+.photo-slot{
+  aspect-ratio:1/1;
+  background:var(--paper-raised);
+  border:2px dashed var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:16px;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:12px;
+  color:var(--text-muted);
+}
+.intro-text p{margin:0 0 16px 0; font-size:17px;}
+.interest-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:20px;
+}
+.interest-tags span{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:13px;
+  border:1px solid var(--teal);
+  color:var(--teal);
+  padding:5px 12px;
+}
+
+@media (max-width:640px){
+  .intro-grid{grid-template-columns:1fr;}
+  .photo-slot{max-width:220px; margin:0 auto;}
+}
+
+/* ---------- SCHEMA / ENTITY BOX (used for projects) ---------- */
+.entity-box{
+  border:1px solid var(--ink);
+  margin-bottom:32px;
+  background:var(--paper-raised);
+}
+.entity-header{
+  background:var(--ink);
+  color:var(--paper);
+  padding:12px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.entity-header h3{
+  color:var(--paper);
+  margin:0;
+  font-size:19px;
+}
+.entity-header .tech-tag{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:12px;
+  color:var(--amber);
+}
+.entity-rows{
+  padding:0;
+}
+.entity-row{
+  display:grid;
+  grid-template-columns:130px 1fr;
+  gap:18px;
+  padding:14px 20px;
+  border-bottom:1px solid var(--line);
+  font-size:16px;
+}
+.entity-row:last-child{border-bottom:none;}
+.entity-row .field-name{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:13px;
+  color:var(--text-muted);
+  padding-top:2px;
+}
+.entity-row a.repo-link{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:14px;
+}
+
+@media (max-width:640px){
+  .entity-row{grid-template-columns:1fr;}
+}
+
+/* ---------- SKILLS TABLE (about page) ---------- */
+.schema-table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:8px;
+}
+.schema-table th, .schema-table td{
+  text-align:left;
+  padding:12px 16px;
+  border-bottom:1px solid var(--line);
+  font-size:16px;
+}
+.schema-table th{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:12px;
+  color:var(--text-muted);
+  font-weight:500;
+  border-bottom:2px solid var(--ink);
+}
+
+/* ---------- PLACEHOLDER / TODO CALLOUT ---------- */
+.todo-callout{
+  border-left:3px solid var(--amber);
+  background:var(--paper-raised);
+  padding:18px 22px;
+  margin:20px 0;
+  font-size:15px;
+  color:var(--text-muted);
+}
+.todo-callout strong{color:var(--ink);}
+
+/* ---------- REFLECTION PROMPTS ---------- */
+.prompt-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.prompt-list li{
+  padding:16px 0;
+  border-bottom:1px solid var(--line);
+}
+.prompt-list .q{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:13px;
+  color:var(--teal);
+  display:block;
+  margin-bottom:6px;
+}
+
+/* ---------- CONTACT ---------- */
+.contact-block{
+  background:var(--ink);
+  color:var(--paper);
+}
+.contact-block h2{color:var(--paper);}
+.contact-block .section-head{border-bottom-color:rgba(241,238,230,0.3);}
+.contact-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  max-width:520px;
+}
+.contact-list li{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  padding:16px 0;
+  border-bottom:1px solid rgba(241,238,230,0.25);
+}
+.contact-list .field-name{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:13px;
+  color:var(--amber);
+}
+.contact-list a{
+  color:var(--paper);
+  font-size:16px;
+}
+.contact-list a:hover, .contact-list a:focus-visible{color:var(--amber);}
+
+/* ---------- FOOTER ---------- */
+footer{
+  padding:26px 0 40px;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:12px;
+  color:var(--line);
+  border-top:1px solid var(--line);
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+}

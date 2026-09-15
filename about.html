@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me — Sihe Masinga</title>
+<meta name="description" content="About Sihe Masinga: an IT student's path into computer science, career goals, and the skills currently being developed.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="index.html" class="nav-name">Sihe Masinga</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" aria-current="page">About Me</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="reflection.html">Reflection</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="wrap">
+    <p class="page-eyebrow mono">About Me</p>
+    <h1>Why computer science, and where I'm headed</h1>
+    <p class="lede">A short professional biography covering why I chose IT, my career goals, and the skills I'm currently building.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2>Why Information Technology</h2>
+    </div>
+    <div class="todo-callout">
+      <strong>Personalise this section:</strong> replace the paragraph below with your own reasoning — what actually pulled you toward IT/computer science. A sentence or two on a specific moment or realisation reads better than a general statement.
+    </div>
+    <p>[ Draft: I chose computer science because I'm drawn to problems that have a clear, buildable solution — you write something, test it, and can see exactly whether it works. Studying Java and database systems has shown me how much structure sits underneath the software people use every day, and I wanted to understand that structure rather than just use the end result. ]</p>
+
+    <div class="section-head" style="margin-top:20px;">
+      <span class="section-num">02</span>
+      <h2>Career goals</h2>
+    </div>
+    <div class="todo-callout">
+      <strong>Personalise this section:</strong> is this backend development, full-stack, database/data engineering, something else? Even a rough direction is fine — this can change as you learn more.
+    </div>
+    <p>[ Draft: In the near term, I'm aiming for a role where I can work on backend systems and databases — the kind of work that involves designing how data is structured and how a system behaves, not just how it looks. Longer term, I'd like to work on systems that other developers rely on. ]</p>
+
+    <div class="section-head" style="margin-top:20px;">
+      <span class="section-num">03</span>
+      <h2>Interests within IT</h2>
+    </div>
+    <p>Right now, my main interests sit at the intersection of application logic and data: object-oriented programming in Java, and relational database design — including entity-relationship modelling and the trade-offs between relational and non-relational systems.</p>
+
+    <div class="section-head" style="margin-top:20px;">
+      <span class="section-num">04</span>
+      <h2>Skills currently in progress</h2>
+    </div>
+    <table class="schema-table">
+      <thead>
+        <tr><th>Skill</th><th>Context</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Java (OOP, inheritance, encapsulation)</td><td>Building a multi-class hospital admission system</td></tr>
+        <tr><td>Unit testing (JUnit)</td><td>Testing core logic in Java projects</td></tr>
+        <tr><td>Relational database design</td><td>Entity-relationship modelling for a marketplace database</td></tr>
+        <tr><td>Systems thinking</td><td>Comparing relational vs. non-relational approaches to real problems</td></tr>
+      </tbody>
+    </table>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="year"></span> Sihe Masinga</span>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
