@@ -6,13 +6,13 @@
    =========================================================== */
 
 :root{
-  --ink:#1D2B2E;
-  --paper:#F1EEE6;
-  --paper-raised:#E8E3D6;
-  --teal:#2F7A72;
-  --amber:#C08A3E;
-  --line:#8D8A7E;
-  --text-muted:#4A4E45;
+  --ink:#0A0A0A;
+  --paper:#FFFFFF;
+  --paper-raised:#F0F0F0;
+  --teal:#000000;
+  --amber:#707070;
+  --line:#B8B8B8;
+  --text-muted:#3A3A3A;
   --max-width:960px;
 }
 
@@ -77,11 +77,11 @@ nav.site-nav .wrap{
 .nav-links a:hover, .nav-links a:focus-visible{
   opacity:1;
   color:var(--paper);
-  border-bottom-color:var(--amber);
+  border-bottom-color:#8A8A8A;
 }
 .nav-links a[aria-current="page"]{
   opacity:1;
-  border-bottom-color:var(--teal);
+  border-bottom-color:var(--paper);
 }
 
 /* ---------- PAGE HEADER (per-page hero) ---------- */
